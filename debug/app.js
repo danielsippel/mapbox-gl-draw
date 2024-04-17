@@ -24,6 +24,7 @@ const map = new mapboxgl.Map({
   container: 'map',
   zoom: 1,
   center: [0, 0],
+  style: 'mapbox://styles/mapbox/streets-v8'
 });
 
 map.addControl(new MapboxGeocoder({
