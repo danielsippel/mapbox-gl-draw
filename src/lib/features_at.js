@@ -29,8 +29,7 @@ function featuresAt(event, bbox, ctx, buffer) {
   const box = (event) ? mapEventToBoundingBox(event, buffer) : bbox;
 
   const queryParams = {};
-
-  if (ctx.options.styles) queryParams.layers = ctx.options.styles.map(s => s.id).filter(id => ctx.map.getLayer(id) != null);
+  if (ctx.options.styles) queryParams.layers = ctx.options.styles.map(s => s.id);
 
   const features = ctx.map.queryRenderedFeatures(box, queryParams)
     .filter(feature => META_TYPES.indexOf(feature.properties.meta) !== -1);
